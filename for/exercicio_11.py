@@ -1,11 +1,13 @@
-# Escreva um algoritmo que calcule a soma de todos os números entre 1 e 1000 que sejam múltiplos de 3 ou 5.
-soma_multip_3 = 0
-soma_multip_5 = 0
+# Faça um programa que leia um número inteiro e informe se ele é perfeito ou não.
+# Um número perfeito é aquele que é igual à soma de seus divisores. Ex.: 6 = 1 + 2 + 3 = número perfeito
 
-for i in range(1,1001):
-    if(i % 3 == 0):
-        soma_multip_3 += i
-    elif(i % 5 == 0):
-        soma_multip_5 += i
-print("Soma dos múltiplos de 3: ", soma_multip_3)
-print("Soma dos múltiplos de 5: ", soma_multip_5)
+numero = int(input("Digite um número inteiro: "))
+soma = 0
+
+for i in range(1,numero):
+    if(numero % i == 0):
+        soma += i
+if(soma == numero):
+    print(numero, "é um número perfeito")
+else:
+    print(numero, "não é um número perfeito")

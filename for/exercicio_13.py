@@ -1,19 +1,20 @@
-# Escreva um algoritmo que solicita ao usuário um número N e imprime os N primeiros termos da sequência de Fibonacci
+# Escreva um algoritmo que recebe dois números do usuário e verifica se eles são números amigos. Números amigos são pares
+# de números inteiros em que a soma dos divisores próprios de um número é igual ao outro número e vice-versa.
 
-n = int(input("Digite o número de termos da sequência de Fibonacci: "))
+def soma_divisores(num):
+    soma = 0
+    for i in range(1, num):
+        if num % i == 0:
+            soma += i
+    return soma
 
-fibonacci = [0, 1]  # Inicializa a lista com os dois primeiros termos
+num1 = int(input("Digite o primeiro número: "))
+num2 = int(input("Digite o segundo número: "))
 
-if n <= 0:
-    print("Digite um número inteiro positivo.")
-elif n == 1:
-    print("Sequência de Fibonacci até o", n, "termo:")
-    print(fibonacci[0])
+soma_divisores_num1 = soma_divisores(num1)
+soma_divisores_num2 = soma_divisores(num2)
+
+if soma_divisores_num1 == num2 and soma_divisores_num2 == num1:
+    print("Os números", num1, "e", num2, "são números amigos.")
 else:
-    print("Sequência de Fibonacci até o", n, "termo:")
-    print(fibonacci[0])
-    print(fibonacci[1])
-    for i in range(2, n):
-        termo = fibonacci[i - 1] + fibonacci[i - 2]
-        fibonacci.append(termo)
-        print(termo)
+    print("Os números", num1, "e", num2, "não são números amigos.")

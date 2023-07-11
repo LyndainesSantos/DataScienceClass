@@ -1,20 +1,11 @@
-# Escreva um algoritmo que recebe dois números do usuário e verifica se eles são números amigos. Números amigos são pares
-# de números inteiros em que a soma dos divisores próprios de um número é igual ao outro número e vice-versa.
+# Escreva um algoritmo que calcule a soma de todos os números entre 1 e 1000 que sejam múltiplos de 3 ou 5.
+soma_multip_3 = 0
+soma_multip_5 = 0
 
-def soma_divisores(num):
-    soma = 0
-    for i in range(1, num):
-        if num % i == 0:
-            soma += i
-    return soma
-
-num1 = int(input("Digite o primeiro número: "))
-num2 = int(input("Digite o segundo número: "))
-
-soma_divisores_num1 = soma_divisores(num1)
-soma_divisores_num2 = soma_divisores(num2)
-
-if soma_divisores_num1 == num2 and soma_divisores_num2 == num1:
-    print("Os números", num1, "e", num2, "são números amigos.")
-else:
-    print("Os números", num1, "e", num2, "não são números amigos.")
+for i in range(1,1001):
+    if(i % 3 == 0):
+        soma_multip_3 += i
+    elif(i % 5 == 0):
+        soma_multip_5 += i
+print("Soma dos múltiplos de 3: ", soma_multip_3)
+print("Soma dos múltiplos de 5: ", soma_multip_5)
