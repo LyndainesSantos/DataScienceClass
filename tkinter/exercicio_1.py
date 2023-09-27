@@ -1,4 +1,3 @@
-# Write a Python GUI program to add a button in your application using tkinter module.
 from tkinter import *
 janela = Tk()
 janela.title("Exemplo 1")
